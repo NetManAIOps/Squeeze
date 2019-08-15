@@ -2,40 +2,10 @@
 Implementation and datasets for ISSRE 2019 REG paper 'Generic and Robust Localization of Multi-Dimensional Root Cause'.
 
 ## Requirements
-
-1.  Install `pipenv`
-
-    I use [pipenv](https://github.com/pypa/pipenv) to manage the requirements.
-
-    If you're on MacOS, you can install Pipenv easily with Homebrew:
-
-    ```
-    $ brew install pipenv
-    ```
-
-    Or, if you're using Debian Buster+:
-
-    ```
-    $ sudo apt install pipenv
-    ```
-    
-    Otherwise, refer to the [documentation](https://docs.pipenv.org/en/latest/install/#installing-pipenv) for instructions.
-
-2.  Sync the environments.
-
-    ``` bash
-    pipenv sync
-    ```
-
-3.  Activate the virtualenv
-
-    ``` bash
-    pipenv shell
-    ```
-
-
-
-For those prefer `pip`,  `pipenv` supports exporting requirements into a `requirements.txt` for `pip`.
+`python>=3.6` is required.
+``` bash
+pip install -r requirements.txt
+```
 
 ## Datasets
 
