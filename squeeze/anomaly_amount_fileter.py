@@ -6,8 +6,8 @@ from scipy.stats import gaussian_kde
 
 class KPIFilter:
     def __init__(self, real_array, predict_array):
-        self.select_metrics = np.log(np.abs(real_array - predict_array) + 1) / 10
-        # self.select_metrics = np.abs(real_array - predict_array)
+        # self.select_metrics = np.log(np.abs(real_array - predict_array) + 1) / 10
+        self.select_metrics = np.abs(real_array - predict_array)
         # self.select_metrics = np.abs(predict_array - real_array) / np.abs(real_array + predict_array)
         kernel = gaussian_kde(self.select_metrics)
         _x = sorted(np.linspace(np.min(self.select_metrics), np.max(self.select_metrics), 1000))
