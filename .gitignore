@@ -15,3 +15,4 @@ B4.json
 A.json
 D.json
 .DS_Store
+.venv/
