@@ -1,7 +1,7 @@
 __pycache__/
 output/
 B0/
-B1/
+pB1/
 B2/
 B3/
 B4/
@@ -14,5 +14,12 @@ B3.json
 B4.json
 A.json
 D.json
+B0
+B1
+B2
+B3
+B4
+A
+D
 .DS_Store
 .venv/
