@@ -2,12 +2,10 @@
 Implementation and datasets for ISSRE 2019 REG paper 'Generic and Robust Localization of Multi-Dimensional Root Cause'.
 
 ## Requirements
-At least `python>=3.6` is required.
+At least `python>=3.6, <3.7` is required. Though Python should be backward-compatible, there is no built wheel for some requirements like SciPy for a higher Python version.
 ``` bash
 pip install -r requirements.txt
 ```
-
-A virtual environment is strongly recommonded.
 
 ## Datasets
 
@@ -115,7 +113,27 @@ Then we get the output (F1-score, precision, recall):
 0.7858942065491183 0.7918781725888325 0.78
 ```
 
-
+## Known Issues
+This version of codes is faithful to the published version.
+However, two known severe issues are harming the localization performance.
+1. The calculation of `_a1` and `_a2` in `squeeze/squeeze.py:184` is incorrect, which is not following the description in the paper.
+   It should be corrected as follows
+   ``` python
+    reduced_data_p, _ = self.get_derived_dataframe(
+        frozenset(elements[:partition]), cuboid=cuboid,
+        reduction="sum", return_complement=True,
+        subset_indices=np.concatenate([indices, self.normal_indices]))
+    if len(reduced_data_p):
+        _a1, _a2 = data_p.predict.values * (
+                reduced_data_p.real.item() / reduced_data_p.predict.item()
+        ), data_n.predict.values
+    else:
+        # print(elements[:partition], data_p, reduced_data_p)
+        assert len(data_p) == 0
+        _a1 = 0
+        _a2 = data_n.predict.values   
+   ```
+2. The calculation of `score_weight` in `squeeze/suqeeze.py:256` may produce negative values, which will cause incorrect localization results. Different from 1, the calculation here is faithful to the paper. 
 
 ## Citation
 
