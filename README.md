@@ -133,7 +133,7 @@ However, two known severe issues are harming the localization performance.
         _a1 = 0
         _a2 = data_n.predict.values   
    ```
-2. The calculation of `score_weight` in `squeeze/suqeeze.py:256` may produce negative values, which will cause incorrect localization results. Different from 1, the calculation here is faithful to the paper. 
+2. The calculation of `score_weight` in `squeeze/suqeeze.py:256` may produce negative values, which will cause incorrect localization results. Different from 1, the calculation here is faithful to the paper. See https://github.com/NetManAIOps/Squeeze/issues/6
 
 ## Citation
 
