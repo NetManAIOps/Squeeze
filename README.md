@@ -9,7 +9,7 @@ pip install -r requirements.txt
 
 ## Datasets
 
-Datasets `A, B0, B1, B2, B3, B4, D` in Table VII are on [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/0bc5a68ce2764a0d8215/).
+Datasets `A, B0, B1, B2, B3, B4, D` in Table VII are on [Zenodo](https://zenodo.org/record/8153367) (updated on 2023-07-17).
 The ground truth root cause sets are in `injection_info.csv` in each subfolder.
 
 ## Usage
